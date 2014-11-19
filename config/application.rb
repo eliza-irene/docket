@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Docket
   class Application < Rails::Application
+    config.i18n.enforce_available_locales = true
     config.assets.paths << Rails.root.join("lib","assets","bower_components","bootstrap-sass-official", "assets", "stylesheets")
     config.assets.paths << Rails.root.join("lib","assets","bower_components","bootstrap-sass-official", "assets","fonts")
 
