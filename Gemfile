@@ -19,6 +19,14 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'httparty'
 
+gem 'omniauth', '~> 1.2.2'
+
+gem 'omniauth-google-oauth2'
+
+gem 'json'
+
+gem 'google-api-client'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

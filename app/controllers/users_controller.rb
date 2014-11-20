@@ -24,6 +24,18 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+
+    @auth = request.env['omniauth.auth']#['credentials']
+
+    @token = @auth['credentials']['token']
+    client = Google::APIClient.new
+    client.authorization.access_token = @token
+    service = client.discovered_api('calendar', 'v3')
+    @result = client.execute(
+      :api_method => service.events.list,
+      :parameters => {'calendarId' => 'primary', 'q' => 'Free-time'},
+      :headers => {'Content-Type' => 'application/json'})
+    
     @user = User.new(user_params)
 
     respond_to do |format|

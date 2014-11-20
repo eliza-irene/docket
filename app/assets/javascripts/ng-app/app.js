@@ -9,7 +9,7 @@ angular
         'ui.calendar'
     ])
 
-    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     /* Routes and States */
      $stateProvider
@@ -48,4 +48,4 @@ angular
 
     // enable HTML5 Mode for SEO
     $locationProvider.html5Mode(true);
-}]);
+});
