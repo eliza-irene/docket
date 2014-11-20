@@ -5,7 +5,8 @@ angular
         'ui.router',
         'ui.bootstrap',
         'ct.ui.router.extras',
-        'templates'
+        'templates',
+        'ui.calendar'
     ])
 
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -26,19 +27,20 @@ angular
             templateUrl: 'dashboard/layout.html'
         })
             // the default route when someone hits dashboard
-            .state('dashboard.one', {
+            .state('dashboard.calendar', {
                 url: '',
-                templateUrl: 'dashboard/one.html'
+                templateUrl: 'dashboard/calendar.html',
+                controller: 'CalendarCtrl'
             })
             // this is /dashboard/two
-            .state('dashboard.two', {
-                url: '/two',
-                templateUrl: 'dashboard/two.html'
+            .state('dashboard.search_results', {
+                url: '/search_results',
+                templateUrl: 'dashboard/search_results.html'
             })
             // this is /dashboard/three
-            .state('dashboard.three', {
-                url: '/three',
-                templateUrl: 'dashboard/three.html'
+            .state('dashboard.free_options', {
+                url: '/free_options',
+                templateUrl: 'dashboard/free_options.html'
             });
 
     // default fall back route

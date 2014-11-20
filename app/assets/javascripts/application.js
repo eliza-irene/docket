@@ -21,6 +21,7 @@
 //= require ui-router-extras
 //= require moment
 //= require fullcalendar
+//= require angular-ui-calendar
 //= require_tree ../templates
 //= require_tree .
 
