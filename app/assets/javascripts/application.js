@@ -19,5 +19,8 @@
 //= require angular-rails-templates
 //= require angular-sanitize
 //= require ui-router-extras
+//= require moment
+//= require fullcalendar
 //= require_tree ../templates
 //= require_tree .
+
