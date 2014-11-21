@@ -1,5 +1,6 @@
 angular.module('docketApp')
-  .controller('HomeCtrl', ['$scope', 'googleLogin', 'googleCalendar', 'googlePlus', function($scope, googleLogin, googleCalendar, googlePlus) {
+  .controller('HomeCtrl', ['$scope', 'googleLogin', 'googleCalendar', 'googlePlus', 
+    function($scope, googleLogin, googleCalendar, googlePlus) {
       $scope.things = ['Angular', 'Rails 4.1', 'UI Router', 'Together!!'];
 
         $scope.login = function () {
@@ -20,5 +21,5 @@ angular.module('docketApp')
         $scope.loadCalendars = function() {
             $scope.calendars = googleCalendar.listCalendars();
         }
-        
+
     }]);
