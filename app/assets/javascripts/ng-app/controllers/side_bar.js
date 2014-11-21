@@ -1,5 +1,5 @@
 angular.module('docketApp')
-  .controller('LayoutCtrl', function ($scope) {
+  .controller('SideBarCtrl', ["$scope", "eventService", function ($scope,eventService) {
 
   $scope.today = function() {
     $scope.dt = new Date();
@@ -29,4 +29,10 @@ angular.module('docketApp')
 
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
-});
+
+  $scope.getEvents = function() {
+    eventService.search($scope.location, $scope.dt).success(function(data) {
+      $scope.events = data;
+    });
+  }
+}]);

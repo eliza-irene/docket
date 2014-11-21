@@ -1,6 +1,15 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  def search_events
+    location = event_params["location"]
+    js_date = event_params["date"]
+    half_of_date = "#{js_date.gsub('-','').slice(0,8)}00"
+    date = "#{half_of_date}-#{half_of_date}" || Date.today.to_s.gsub('-','')
+    response = HTTParty.get("http://api.eventful.com/json/events/search?&location=#{location}&date=#{date}&image_sizes=thumb&app_key=PdFc5jdNV76CV3Rb")
+    @results = (JSON.parse(response))['events']['event']
+  end
+
   # GET /events
   # GET /events.json
   def index
@@ -69,6 +78,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:freetime_id, :title, :city_name, :start_time, :venue_name, :venue_url)
+      params.permit(:freetime_id, :title, :city_name, :start_time, :venue_name, :venue_url, :location, :date)
     end
 end

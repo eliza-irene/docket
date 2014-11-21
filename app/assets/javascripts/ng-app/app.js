@@ -9,7 +9,7 @@ angular
         'ui.calendar'
     ])
 
-    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     /* Routes and States */
      $stateProvider
@@ -24,7 +24,7 @@ angular
         .state('dashboard', {
             abstract: true,
             url: '/dashboard',
-            templateUrl: 'dashboard/layout.html'
+            templateUrl: 'dashboard/side_bar.html'
         })
             // the default route when someone hits dashboard
             .state('dashboard.calendar', {
@@ -48,4 +48,4 @@ angular
 
     // enable HTML5 Mode for SEO
     $locationProvider.html5Mode(true);
-});
+}]);

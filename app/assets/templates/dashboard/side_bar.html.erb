@@ -1,4 +1,4 @@
-<div class="container-fluid" ng-controller="LayoutCtrl">
+<div class="container-fluid" ng-controller="SideBarCtrl">
   <div class="row">
     <div class="col-sm-3">
       <div class="row">
@@ -22,8 +22,11 @@
           </p>
         </div>
       <div class="col-md-6">
-        <input class="text-center search-box" ng-model="search" placeholder="city, state, or zip"/>
+        <input class="text-center search-box" ng-model="location" placeholder="city, state, or zip"/>
       </div>
+      <button class="btn btn-default" ng-click="getEvents()">Search</button>
+      <ul>
+        <li ng-repeat="event in events">{{event.title}}</li>
       </div>
     </div>
 
