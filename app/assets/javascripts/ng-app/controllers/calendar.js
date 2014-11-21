@@ -1,8 +1,6 @@
 angular.module('docketApp')
   .controller('CalendarCtrl', ['$scope', function($scope) {
 
-    console.log('CalendarCtrl is alive!');
-
     $scope.dayClick = function() {
       alert('dayClick');
       console.log('dayClick');
@@ -18,7 +16,7 @@ angular.module('docketApp')
 
     $scope.uiConfig = {
       calendar: {
-        height: 600,
+        height: 700,
         editable: true,
         header: {
           left: 'prev,next today',

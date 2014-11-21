@@ -4,3 +4,16 @@
 .dashboard-ui-view{
   @extend .main-view-container;
 }
+
+.profile_img {
+  margin-left: 30px;
+  border-radius: 50%;
+  background: #D0D0D0;
+  height: 100px;
+  width: 100px;
+}
+
+.search-box {
+  height: 35px;
+}
+

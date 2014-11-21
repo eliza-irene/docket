@@ -1,4 +1,52 @@
-<div class="container">
+<div class="container-fluid" ng-controller="LayoutCtrl">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-4 profile_img">
+          <img ng-src="{{ }}"><!--insert profile pic call here --> 
+        </div>
+        <div class="col-sm-8 profile_txt">
+          <h3>Your name is {{user.name}}</h3>
+          <h3>Your email is {{user.email}}</h3>
+        </div>
+      </div>
+      <hr color="black">
+      <h4 class="text-center">Search all available events</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="input-group">
+            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2016-06-30'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+      <div class="col-md-6">
+        <input class="text-center search-box" ng-model="search" placeholder="city, state, or zip"/>
+      </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-9">
+        <div class="dashboard-view-container">
+            <div class="dashboard-ui-view" ui-view></div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
     <div class="row">
     <div class="col-sm-3 dashboard-navigation">
         <h4>Dashboard Navigation</h4>
@@ -14,4 +62,4 @@
         </div>
     </div>
     </div>
-</div> 
+</div>  -->
