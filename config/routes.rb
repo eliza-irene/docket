@@ -3,11 +3,8 @@ Rails.application.routes.draw do
   match '/search', to: 'events#search_events', via: 'get'
 
   resources :tokens
-
   resources :events
-
   resources :free_times
-
   resources :users
 
   root 'application#index'

@@ -24,7 +24,8 @@ angular
         .state('dashboard', {
             abstract: true,
             url: '/dashboard',
-            templateUrl: 'dashboard/side_bar.html'
+            templateUrl: 'dashboard/side_bar.html',
+            controller: 'SideBarCtrl'
         })
             // the default route when someone hits dashboard
             .state('dashboard.calendar', {
@@ -35,7 +36,8 @@ angular
             // this is /dashboard/two
             .state('dashboard.search_results', {
                 url: '/search_results',
-                templateUrl: 'dashboard/search_results.html'
+                templateUrl: 'dashboard/search_results.html',
+                controller: 'SearchResultsCtrl'
             })
             // this is /dashboard/three
             .state('dashboard.free_options', {

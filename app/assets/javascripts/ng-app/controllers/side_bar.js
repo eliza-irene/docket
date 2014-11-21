@@ -1,5 +1,5 @@
 angular.module('docketApp')
-  .controller('SideBarCtrl', ["$scope", "eventService", function ($scope,eventService) {
+  .controller('SideBarCtrl', ["$scope", "$state", "eventService", function ($scope, $state, eventService) {
 
   $scope.today = function() {
     $scope.dt = new Date();
@@ -32,7 +32,7 @@ angular.module('docketApp')
 
   $scope.getEvents = function() {
     eventService.search($scope.location, $scope.dt).success(function(data) {
-      $scope.events = data;
+      $state.go('dashboard.search_results');
     });
-  }
+  };
 }]);
