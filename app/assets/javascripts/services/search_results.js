@@ -6,10 +6,8 @@ angular.module('docketApp')
   that.events = [];
 
   this.search = function(location, date) {
-    console.log('eventService.search called with location, date = ' + location + ', ' + date);
     return $http.get('/search.json', { params: { location: location, date: date }}).success(function(data) {
-        console.log('eventService.search got data = ' + JSON.stringify(data));
-        that.events = data;
+      that.events = data;
     });
   };
 

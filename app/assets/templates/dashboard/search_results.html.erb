@@ -2,6 +2,30 @@
 
 <div>
   <ul>
-    <li ng-repeat="event in events">{{event.title}}</li>
+    <li ng-repeat="event in events">
+      {{event.title}}</br>
+      {{event.start_time}}</br>
+
+    </li>
   </ul>   
 </div>
+
+<div>
+   <script type="text/ng-template" id="myModalContent.html">
+      <div class="modal-header">
+          <h3 class="modal-title">{{event.title}}</h3>
+      </div>
+      <div class="modal-body">
+          <ul>
+              <li ng-repeat="item in items">
+                  <a ng-click="selected.item = item">{{ item }}</a>
+              </li>
+          </ul>
+          Selected: <b>{{ selected.item }}</b>
+      </div>
+  </script>
+  <button class="btn btn-default" ng-click="open()">Open me!</button>
+</div>
+
+<!-- in modal
+{{event.venue_address}} etc </br> -->
