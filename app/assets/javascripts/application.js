@@ -23,6 +23,7 @@
 //= require moment
 //= require fullcalendar
 //= require angular-ui-calendar
+//= require angular-googleapi/src/angular-googleapi.js
 //= require_tree ../templates
 //= require_tree .
 

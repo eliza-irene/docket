@@ -1,9 +1,10 @@
-<div class="container ">
-    <h1>The Home View!</h1>
-    <ul>
-        <li ng-repeat="thing in things">{{thing}}</li>
-    </ul>
-</div>
+<!doctype html>
+<html lang="en" ng-app="demo" ng-controller="DemoCtrl">
+<head>
+  <meta charset="utf-8">
+  <title>Client-side authentication demo</title>
+</head>
+<body>
 
 <div>
   <div>
@@ -23,3 +24,11 @@
 
   </div>
 </div>
+
+<script src="vendor/angular.js"></script>
+
+<script src="src/angular-googleapi.js"></script>
+<script src="controllers.js"></script>
+<script src="https://apis.google.com/js/client.js"></script>
+</body>
+</html>
