@@ -1,6 +1,105 @@
 <div class="container ">
     <h1>The Home View!</h1>
-    <ul>
-        <li ng-repeat="thing in things">{{thing}}</li>
-    </ul>
+
+
+    <div id="wrapper">
+      <nav id="primary">
+        <ul>
+          <li>
+            <h1>Take control of your free time</h1>
+            <a class="manned-flight" href="#manned-flight">View</a>
+          </li>
+          <li>
+            <h1>Use docket!</h1>
+            <a class="frameless-parachute" href="#frameless-parachute">View</a>
+          </li>
+          <li>
+            <h1>Love docket!</h1>
+            <a class="english-channel" href="#english-channel">View</a>
+          </li>
+          <li>
+            <h1>About</h1>
+            <a class="about" href="#about">View</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div id="content">
+        <article id="manned-flight">
+          <header>
+            <h1>Take control of your free time</h1>
+          </header>
+          <p>This app does everything you could possibly want it to do and not only that, it is beautifully designed and extremely intuitive to use. Download it from the App Store for FREE if you don’t mind some adverts popping up or if you prefer an ad-free experience then you can down load the ad-free version for 99p.</p>
+          <nav class="next-prev">
+            <hr />
+            <a class="next frameless-parachute" href="#frameless-parachute">Next</a>
+          </nav>
+        </article>
+        
+        <article id="frameless-parachute">
+          <header>
+            <h1>Love your life</h1>
+          </header>
+          <p>This app does everything you could possibly want it to do and not only that, it is beautifully designed and extremely intuitive to use. Download it from the App Store for FREE if you don’t mind some adverts popping up or if you prefer an ad-free experience then you can down load the ad-free version for 99p.</p>
+          <nav class="next-prev">
+            <a class="prev manned-flight" href="#manned-flight">Prev</a>
+            <hr />
+            <a class="next english-channel" href="#english-channel">Next</a>
+          </nav>
+        </article>
+        
+        <article id="english-channel">
+          <header>
+            <h1>Do fun things</h1>
+          </header>
+          <p>This app does everything you could possibly want it to do and not only that, it is beautifully designed and extremely intuitive to use. Download it from the App Store for FREE if you don’t mind some adverts popping up or if you prefer an ad-free experience then you can down load the ad-free version for 99p.</p>
+          <nav class="next-prev">
+            <a class="prev frameless-parachute" href="#frameless-parachute">Prev</a>
+            <hr />
+            <a class="next about" href="#about">Next</a>
+          </nav>
+        </article>
+        
+        <article id="about">
+          <header>
+            <h1>About</h1>
+          </header>
+          <p>This is a fun to use app that will make your life better! 
+          <nav class="next-prev">
+            <a class="prev english-channel" href="#english-channel">Prev</a>
+            <hr />
+          </nav>
+        </article>
+      </div>
+      
+      <!-- Parallax foreground images-->
+      <div id="parallax-bg3">
+        <img id="bg3-1" src="" width="529" height="757" alt=""/>
+        <img id="bg3-2" src="" width="603" height="583" alt=""/>
+        <img id="bg3-3" src="" width="446" height="713" alt=""/>
+        <img id="bg3-4" src="" width="1104" height="684" alt=""/>
+      </div>
+      
+      <!-- Parallax  midground images -->
+      <div id="parallax-bg2">
+        <img id="bg2-1" src="" alt=""/>
+        <img id="bg2-2" src="" alt=""/>
+        <img id="bg2-3" src="" alt=""/>
+        <img id="bg2-4" src="" alt=""/>
+        <img id="bg2-5" src="" alt=""/>
+      </div>
+      
+      <!-- Parallax  background images -->
+      <div id="parallax-bg1">
+        <img id="bg1-1" src="" alt=""/>
+      </div>
+    
+    </div>
+
+
+
+
+
+
+
 </div>

@@ -1,6 +1,6 @@
 {
   "name": "ui-router-extras",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "authors": [
     "Chris Thielen <ui-router-extras@sandgnat.com>"
   ],
@@ -41,7 +41,7 @@
   ],
   "dependencies": {
     "angular": "~1.2.0",
-    "angular-ui-router": "~0.2.10"
+    "angular-ui-router": "~0.2.8"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",
@@ -49,11 +49,11 @@
     "jquery": "~1.11"
   },
   "homepage": "https://github.com/christopherthielen/ui-router-extras",
-  "_release": "0.0.10",
+  "_release": "0.0.11",
   "_resolution": {
     "type": "version",
-    "tag": "0.0.10",
-    "commit": "a01c95647a02891a960099c5a137a0cbcddb4aa0"
+    "tag": "0.0.11",
+    "commit": "df4974edf0cc9191b71122fff0fdf7bbeaa911d8"
   },
   "_source": "git://github.com/christopherthielen/ui-router-extras.git",
   "_target": "~0.0.10",

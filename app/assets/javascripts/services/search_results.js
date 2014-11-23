@@ -12,8 +12,3 @@ angular.module('docketApp')
   };
 
 }]);
-
-
-
-    // # Gives flexibility on if params come in via query string or header
-    // provided_title = params[:title] || request.headers["title"] || "anchorman"
