@@ -7,8 +7,7 @@ angular
         'ct.ui.router.extras',
         'templates',
         'ui.calendar',
-        'googleApi',
-        'ngRoute'
+        'googleApi'
     ])
 
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'googleLoginProvider', 

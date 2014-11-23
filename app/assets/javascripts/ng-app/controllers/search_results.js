@@ -1,31 +1,41 @@
 angular.module('docketApp')
-  .controller('SearchResultsCtrl', ["$scope", "$modal", "$log", "eventService", function($scope, $modal, $log, eventService, items) {
+  .controller('SearchResultsCtrl', ["$scope", "$modal", "$log", "eventService", function($scope, $modal, $log, eventService) {
 
     $scope.$watch(function() { return eventService.events; }, function(newValue, oldValue) {
       $scope.events = newValue;
     }, true);
 
+    $scope.open = function (events) {
 
-    $scope.items = ['item1', 'item2', 'item3'];
-
-      $scope.open = function (size) {
+      $scope.selectEvent = function(event) {
+        $scope.selectedEvent = event;
+      };
 
       var modalInstance = $modal.open({
         templateUrl: 'myModalContent.html',
-        controller: 'SearchResultsCtrl',
-        size: size,
+        controller: 'ModalInstanceCtrl',
+        backdrop: true,
         resolve: {
-          items: function () {
-            return $scope.items;
+          events: function () {
+            return $scope.events;
           }
         }
       });
-
-      modalInstance.result.then(function (selectedItem) {
-        $scope.selected = selectedItem;
-      }, function () {
-        $log.info('Modal dismissed at: ' + new Date());
-      });
-  };
+    };
 }]);
+
+angular.module('docketApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, events) {
+
+  $scope.events = events;
+  $scope.selected = {
+    event: $scope.events[0]
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+});
+
+
+  
 
