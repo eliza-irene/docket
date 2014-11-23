@@ -55,7 +55,7 @@ angular
 
     googleLoginProvider.configure({
         clientId: '85117048694-h0tf2erv6vv3aj3fqprroh67kna3qgj9.apps.googleusercontent.com',
-        scopes: ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/calendar", "https://www.googleapis.com/auth/plus.login"]
+        scopes: ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/calendar"]
     });
 
 }]);

@@ -15,11 +15,11 @@ angular.module('docketApp')
 
         $scope.loadEvents = function() {
             this.calendarItems = googleCalendar.listEvents({calendarId: this.selectedCalendar.id});
-        }
+        };
 
         $scope.loadCalendars = function() {
             $scope.calendars = googleCalendar.listCalendars();
-        }
+        };
 
     
   
