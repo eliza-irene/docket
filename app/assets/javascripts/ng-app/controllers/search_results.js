@@ -24,7 +24,7 @@ angular.module('docketApp')
     };
 }]);
 
-angular.module('docketApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, events) {
+angular.module('docketApp').controller('ModalInstanceCtrl',[$scope, $modalInstance, events, function ($scope, $modalInstance, events) {
 
   $scope.events = events;
   $scope.selected = {
@@ -34,7 +34,7 @@ angular.module('docketApp').controller('ModalInstanceCtrl', function ($scope, $m
   $scope.cancel = function () {
     $modalInstance.dismiss('cancel');
   };
-});
+}]);
 
 
   
