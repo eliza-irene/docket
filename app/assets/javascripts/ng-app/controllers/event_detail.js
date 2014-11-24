@@ -15,5 +15,7 @@ angular.module('docketApp')
     $scope.addEvent = function(event) {
       eventService.addEvent(event);
       $state.go('dashboard.calendar');
+      //Saves event to the database 
+      eventService.saveSelectedEvent();
     };
 }]);

@@ -31,7 +31,8 @@ angular.module('docketApp')
     };
 
     $scope.calendarData = {
-       events: eventService.calendarEvents
+      // events: $http.get('/events.json')
+      Sevents: eventService.calendarEvents
     };
 
   }]);

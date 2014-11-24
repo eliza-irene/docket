@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :free_times
+  has_many :events
   has_one :token
 
   before_save { self.email = email.downcase }

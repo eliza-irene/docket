@@ -1,6 +1,7 @@
-#require 'cgi'
+
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token
 
   def search_events
     location = event_params["location"]
@@ -35,7 +36,8 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    @user = current_user
+    @event = @user.events.build(event_params)
 
     respond_to do |format|
       if @event.save
@@ -80,6 +82,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.permit(:freetime_id, :title, :city_name, :start_time, :venue_name, :venue_url, :location, :date)
+      params.permit( :title, :city_name, :start_time, :venue_name, :venue_url, 
+        :location, :date, :venue_address)
     end
 end
