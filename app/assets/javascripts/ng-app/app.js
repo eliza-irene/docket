@@ -41,9 +41,16 @@ angular
                 controller: 'SearchResultsCtrl'
             })
             // this is /dashboard/three
-            .state('dashboard.free_options', {
-                url: '/free_options',
-                templateUrl: 'dashboard/free_options.html'
+            .state('dashboard.search_detail', {
+                url: '/search_detail',
+                templateUrl: 'dashboard/event_detail.html',
+                controller: 'EventDetailCtrl'
+            })
+            // this is /dashboard/four
+            .state('dashboard.new_free_time', {
+                url: '/new_free_time',
+                templateUrl: 'dashboard/new_free_time.html',
+                controller: 'NewFreeTimeCtrl'
             });
 
     // default fall back route

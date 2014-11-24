@@ -1,6 +1,8 @@
 angular.module('docketApp')
   .controller('SideBarCtrl', ["$scope", "$state", "eventService", function ($scope, $state, eventService) {
 
+  // $scope.type = "<h1>type in here</h1>";
+
   $scope.today = function() {
     $scope.dt = new Date();
   };
@@ -34,5 +36,9 @@ angular.module('docketApp')
     eventService.search($scope.location, $scope.dt).success(function(data) {
       $state.go('dashboard.search_results');
     });
+  };
+
+  $scope.addFreeTime = function() {
+    $state.go('dashboard.new_free_time');
   };
 }]);

@@ -1,0 +1,15 @@
+<h2>Set a new free time for {{ freeTimeDay.format('LL') }}</h2>
+
+<div class="row">
+  <div class="col-sm-6 text-center">
+    <h3>I want to find events from:</h3> 
+    <h3>{{ freeTimeForm.startTime }} to {{ freeTimeForm.endTime }}</h3>
+    <form name="freeTimeForm" novalidate>
+      <p class="lead">Free-time begins at:</p>
+      <input type="time" name="start_time"  ng-model="freeTimeForm.startTime"><br/>
+      <p class="lead">Free-time ends at:</p>
+      <input type="time" name="end_time"  ng-model="freeTimeForm.endTime"><br/>
+      <button ng-click="addFreeTime()">Submit</button>
+    </form>  
+  </div>
+</div>

@@ -1,9 +1,9 @@
 angular.module('docketApp')
-  .controller('CalendarCtrl', ['$scope', function($scope) {
+  .controller('CalendarCtrl', ['$scope','$state', 'eventService', function($scope, $state, eventService) {
 
-    $scope.dayClick = function() {
-      alert('dayClick');
-      console.log('dayClick');
+    $scope.dayClick = function(date) {
+      eventService.setFreeTimeDay(date);
+      $state.go('dashboard.new_free_time');
     };
 
     $scope.eventDrop = function() {
@@ -21,9 +21,8 @@ angular.module('docketApp')
         header: {
           left: 'prev,next today',
           center: 'title',
-          right: 'month,basicWeek,basicDay'
+          right: 'month,basicWeek'
         },
-        defaultDate: '2014-11-12',
         eventLimit: true, // allow "more" link when too many events
         dayClick: $scope.dayClick,
         eventDrop: $scope.eventDrop,
@@ -31,25 +30,9 @@ angular.module('docketApp')
       }
     };
 
-    // calendarService.getCalendarData().success(function(data) {
-    //   $scope.calendarData = data;
-    // });
-
     $scope.calendarData = {
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2014-11-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2014-11-07',
-          end: '2014-11-10'
-        }
-      ],
-      // color: 'yellow',   // an option!
-      // textColor: 'black' // an option!
+       events: eventService.calendarEvents
     };
 
-}]);
+  }]);
       

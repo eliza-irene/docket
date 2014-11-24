@@ -36,7 +36,7 @@ When I’m signed in </br>
 I want to see my profile/dashboard</br>
 That shows my calendar by month </br>
 And gives me a button to schedule new free-time</br>
-And gives me the option to search all events with an optional new </br>location parameter.</br>
+And gives me the option to search all events with an optional new location parameter.</br>
 
 
 As a user</br>
