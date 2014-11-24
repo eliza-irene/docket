@@ -55,7 +55,7 @@ angular.module('docketApp')
     }
     );
     
-});
+  });
 
 /* Scroll the background layers */
 function parallaxScroll(){
@@ -85,4 +85,4 @@ function redrawDotNav(){
   
 }
 
-  }]);
+}]);
