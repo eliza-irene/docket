@@ -5,7 +5,8 @@ class FreeTimesController < ApplicationController
   # GET /free_times
   # GET /free_times.json
   def index
-    @free_times = FreeTime.all
+    @user = current_user
+    @free_times = @user.free_times.all
   end
 
   # GET /free_times/1

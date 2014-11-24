@@ -31,9 +31,14 @@ angular.module('docketApp')
     };
 
     $scope.calendarData = {
-      // events: $http.get('/events.json')
       events: eventService.calendarEvents
     };
+
+    $scope.$watch(function() {
+      return eventService.calendarEvents;
+    }, function(newValue, oldValue) {
+      $scope.calendarData.events = newValue;
+    }, true);
 
   }]);
       
