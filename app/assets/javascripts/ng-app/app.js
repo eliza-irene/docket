@@ -6,12 +6,11 @@ angular
         'ui.bootstrap',
         'ct.ui.router.extras',
         'templates',
-        'ui.calendar',
-        'googleApi'
+        'ui.calendar'
     ])
 
-    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'googleLoginProvider', 
-        function ($stateProvider, $urlRouterProvider, $locationProvider, googleLoginProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
+        function ($stateProvider, $urlRouterProvider, $locationProvider ) {
 
     /* Routes and States */
      $stateProvider
@@ -52,10 +51,5 @@ angular
 
     // enable HTML5 Mode for SEO
     $locationProvider.html5Mode(true);
-
-    googleLoginProvider.configure({
-        clientId: '85117048694-h0tf2erv6vv3aj3fqprroh67kna3qgj9.apps.googleusercontent.com',
-        scopes: ["https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/calendar"]
-    });
 
 }]);

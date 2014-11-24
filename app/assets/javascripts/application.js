@@ -16,14 +16,12 @@
 //= require angular-bootstrap
 //= require angular-animate/angular-animate.js
 //= require angular-ui-router
-//= require oauth-js
 //= require angular-rails-templates
 //= require angular-sanitize
 //= require ui-router-extras
 //= require moment
 //= require fullcalendar
 //= require angular-ui-calendar
-//= require angular-googleapi/src/angular-googleapi.js
 //= require_tree ../templates
 //= require_tree .
 

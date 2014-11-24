@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :signed_in_user, only: [:show]
 
   # GET /users
   # GET /users.json
@@ -24,28 +25,14 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-
-    @auth = request.env['omniauth.auth']#['credentials']
-
-    @token = @auth['credentials']['token']
-    client = Google::APIClient.new
-    client.authorization.access_token = @token
-    service = client.discovered_api('calendar', 'v3')
-    @result = client.execute(
-      :api_method => service.events.list,
-      :parameters => {'calendarId' => 'primary', 'q' => 'Free-time'},
-      :headers => {'Content-Type' => 'application/json'})
-    
-    @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+      @user = User.new(user_params)
+   if @user.save
+      sign_in(@user)
+      session[:current_user_id] = @user.id
+      redirect_back_or('/#/dashboard')
+   else
+      flash[:error] = "Cannot create a user, check the input and try again"
+      render 'new'
     end
   end
 
@@ -74,13 +61,22 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
+
+  def user_params
+      params.require(:user).permit(:name, :email, 
+        :age, :password, :password_confirmation)
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:name, :email, :location)
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
+    end
+
+    def signed_in_user
+      unless signed_in?
+        store_location
+        flash[:danger] = "Please log in"
+        redirect_to(root_path) unless current_user?(@user)
+      end
     end
 end

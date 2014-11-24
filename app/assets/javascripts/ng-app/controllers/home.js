@@ -1,28 +1,7 @@
 angular.module('docketApp')
-  .controller('HomeCtrl', ['$scope', 'googleLogin', 'googleCalendar', 'googlePlus', 
-    function($scope, googleLogin, googleCalendar, googlePlus) {
+  .controller('HomeCtrl', ['$scope', 
+    function($scope) {
 
-        $scope.login = function () {
-            googleLogin.login();
-        };
-
-        $scope.$on("googlePlus:loaded", function() {
-          googlePlus.getCurrentUser().then(function(user) {
-            $scope.currentUser = user;
-          });
-        })
-        $scope.currentUser = googleLogin.currentUser;
-
-        $scope.loadEvents = function() {
-            this.calendarItems = googleCalendar.listEvents({calendarId: this.selectedCalendar.id});
-        };
-
-        $scope.loadCalendars = function() {
-            $scope.calendars = googleCalendar.listCalendars();
-        };
-
-    
-  
         $(document).ready(function() {
   
         redrawDotNav();
