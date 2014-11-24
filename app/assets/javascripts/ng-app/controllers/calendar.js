@@ -32,7 +32,7 @@ angular.module('docketApp')
 
     $scope.calendarData = {
       // events: $http.get('/events.json')
-      Sevents: eventService.calendarEvents
+      events: eventService.calendarEvents
     };
 
   }]);

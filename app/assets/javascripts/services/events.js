@@ -121,6 +121,16 @@ angular.module('docketApp')
 
     console.log('adding freeTime: ' + JSON.stringify(calendarEvent));
     that.calendarEvents.push(calendarEvent);
+
+    var params  = {
+                    title: calendarEvent.title,  
+                  start_datetime: calendarEvent.start,
+                  end_datetime: calendarEvent.end
+                }
+
+    $http.post('/free_times.json', params).success(function() {
+      console.log('Selected Event Saved to the database');
+    });
   };
 
 }]);

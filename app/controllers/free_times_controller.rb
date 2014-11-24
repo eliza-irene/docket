@@ -1,5 +1,6 @@
 class FreeTimesController < ApplicationController
   before_action :set_free_time, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token
 
   # GET /free_times
   # GET /free_times.json
@@ -24,7 +25,8 @@ class FreeTimesController < ApplicationController
   # POST /free_times
   # POST /free_times.json
   def create
-    @free_time = FreeTime.new(free_time_params)
+    @user = current_user
+    @free_time = @user.free_times.build(free_time_params)
 
     respond_to do |format|
       if @free_time.save
@@ -69,6 +71,6 @@ class FreeTimesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def free_time_params
-      params.require(:free_time).permit(:user_id, :start_datetime, :end_datetime)
+      params.require(:free_time).permit(:user_id, :start_datetime, :end_datetime, :title)
     end
 end
