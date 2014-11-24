@@ -1,3 +1,4 @@
+#require 'cgi'
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
@@ -6,8 +7,9 @@ class EventsController < ApplicationController
     js_date = event_params["date"]
     half_of_date = "#{js_date.gsub('-','').slice(0,8)}00"
     date = "#{half_of_date}-#{half_of_date}" || Date.today.to_s.gsub('-','')
-    response = HTTParty.get("http://api.eventful.com/json/events/search?&location=#{location}&date=#{date}&image_sizes=thumb&app_key=PdFc5jdNV76CV3Rb")
+    response = HTTParty.get("http://api.eventful.com/json/events/search?&location=#{location}&date=#{date}&image_sizes=medium&app_key=PdFc5jdNV76CV3Rb")
     @results = (JSON.parse(response))['events']['event']
+    #CGI::unescape_html @results['events']['event']['description']
   end
 
   # GET /events

@@ -1,41 +1,22 @@
 angular.module('docketApp')
-  .controller('SearchResultsCtrl', ["$scope", "$modal", "$log", "eventService", function($scope, $modal, $log, eventService) {
+  .controller('SearchResultsCtrl', ["$scope", "$state", "eventService", function($scope, $state, eventService) {
+  $scope.data = {};
+  $scope.data.selectedEvent = null;
 
-    $scope.$watch(function() { return eventService.events; }, function(newValue, oldValue) {
-      $scope.events = newValue;
-    }, true);
+  $scope.$watch(function() { return eventService.searchEvents; }, function(newValue, oldValue) {
+    $scope.searchEvents = newValue;
+  }, true);
 
-    $scope.open = function (events) {
+  $scope.getDetails = function() {
 
-      $scope.selectEvent = function(event) {
-        $scope.selectedEvent = event;
-      };
+    $state.go('dashboard.search_detail');
+  };
 
-      var modalInstance = $modal.open({
-        templateUrl: 'myModalContent.html',
-        controller: 'ModalInstanceCtrl',
-        backdrop: true,
-        resolve: {
-          events: function () {
-            return $scope.events;
-          }
-        }
-      });
-    };
+  $scope.setSelectedEvent = function(event) {
+    $scope.data.selectedEvent = event;
+    eventService.setSelectedEvent(event);
+    $state.go('dashboard.search_detail');
+  }
+
 }]);
-
-angular.module('docketApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, events) {
-
-  $scope.events = events;
-  $scope.selected = {
-    event: $scope.events[0]
-  };
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
-});
-
-
-  
 

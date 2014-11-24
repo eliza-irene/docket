@@ -1,22 +1,6 @@
 <h2>Search Results</h2>
 <h4>Click on any event to learn more about it.</h4>
 
-<script type="text/ng-template" id="myModalContent.html">
-    <div class="modal-body">
-      <ul ng-options="selectedEvent in events">
-          <li>
-            {{ selectedEvent.title }}</br>
-            {{ selectedEvent.start_time }}</br>
-            {{ selectedEvent.venue_address }}</br>
-            {{ selectedEvent.venue_url }}
-          </li>
-      </ul>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-warning" ng-click="cancel()">Close</button>
-    </div>
-</script>
-
 <div>
   <table class="table table-hover">
     <thead>
@@ -26,16 +10,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="event in events">
-        <td ng-click="open(selectedEvent)">{{ event.title }}</td>
-        <td ng-click="open(selectedEvent)">{{ event.start_time }}</td>
+      <tr ng-repeat="event in searchEvents" ng-class="{highlighted: event === selectEvent}" ng-click="setSelectedEvent(event)">
+        <td>{{ event.title }}</td>
+        <td>{{ event.start_time }}</td>
       </tr>
     </tbody>
-  </table>   
+  </table>  
 </div>
-
-<!--  ng-click="selectEvent(event)" -->
-
 
 
 <!-- in modal

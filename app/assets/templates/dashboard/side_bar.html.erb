@@ -1,4 +1,7 @@
 <div class="container-fluid">
+
+  <div ng-bind-html="type"></div>
+
   <div class="row">
     <div class="col-sm-3">
       <div class="row">
@@ -29,6 +32,19 @@
         <div>
           <button class="btn btn-default center-block" ng-click="getEvents();">Search</button>
         </div>
+        <hr color="black">
+      </div>
+      <div class="row">
+        <div>
+          <p class="lead text-center"><em>Hint:</em> Click on an empty day</br> to add free-time to your calendar!</p>
+        </div>
+        <hr color="black">
+      </div>
+      <div class="row">
+        <div>
+          <h3 class="text-center">On the docket...</h3>
+        </div>
+        <hr color="black">
       </div>
     </div>
 
