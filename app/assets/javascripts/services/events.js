@@ -6,6 +6,18 @@ angular.module('docketApp')
   that.searchEvents = [];
   that.calendarEvents = [];
 
+  this.getCalendarEvents = function() {
+    $http.get('/events.json').success(function(data) {
+      that.calendarEvents = data;
+    });
+  };
+
+  this.getCalendarFreeTimes = function() {
+    $http.get('/free_times.json').success(function(data) {
+      that.calendarEvents = data;
+    });
+  };
+
   this.search = function(location, date) {
     that.searchDate = date;   // save for later.
     console.log('eventService.search called');
