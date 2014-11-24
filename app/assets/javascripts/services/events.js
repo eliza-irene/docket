@@ -25,6 +25,20 @@ angular.module('docketApp')
     return selected;
   };
 
+  this.saveSelectedEvent = function() {
+    var params  = {
+                    title: selected.title, 
+                  city_name: selected.city_name, 
+                  start_time: selected.start_time,
+                  venue_name: selected.venue_name,
+                  venue_url: selected.venue_url,
+                  venue_address: selected.venue_address
+                }
+    $http.post('/events.json', params).success(function() {
+      console.log('Selected Event Saved to the database');
+    });
+  };
+
   this.setFreeTimeDay = function(date) {
     that.freeTimeDay = date;
   };
@@ -107,6 +121,16 @@ angular.module('docketApp')
 
     console.log('adding freeTime: ' + JSON.stringify(calendarEvent));
     that.calendarEvents.push(calendarEvent);
+
+    var params  = {
+                    title: calendarEvent.title,  
+                  start_datetime: calendarEvent.start,
+                  end_datetime: calendarEvent.end
+                }
+
+    $http.post('/free_times.json', params).success(function() {
+      console.log('Selected Event Saved to the database');
+    });
   };
 
 }]);

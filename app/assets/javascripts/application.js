@@ -16,7 +16,6 @@
 //= require angular-bootstrap
 //= require angular-animate/angular-animate.js
 //= require angular-ui-router
-//= require oauth-js
 //= require angular-rails-templates
 //= require angular-sanitize
 //= require ui-router-extras
