@@ -30,15 +30,31 @@ angular.module('docketApp')
       }
     };
 
-    $scope.calendarData = {
-      events: eventService.calendarEvents
+    var testEvent = {
+      title: 'Whatup?',
+      start: '2014-11-24'
     };
 
-    $scope.$watch(function() {
-      return eventService.calendarEvents;
-    }, function(newValue, oldValue) {
-      $scope.calendarData.events = newValue;
-    }, true);
+    $scope.calendarData = {
+      events: [ testEvent ]
+    };
+
+    $scope.calendarData.events.push( {
+      title: 'XYZ',
+      start: '2014-11-25'
+    });
+
+   
+    eventService.getCalendarEvents().success(function(data) {
+      // $scope.calendarData.events.length = 0;
+      // angular.copy($scope.calendarData.events, data);
+      $scope.calendarData.events.push({
+        title: 'Another',
+        start: '2014-11-22'
+      }); // data;
+
+      $('#calendar').fullCalendar('rerenderEvents');
+
+    });
 
   }]);
-      
