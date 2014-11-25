@@ -4,7 +4,7 @@ class FreeTimesController < ApplicationController
 
   # GET /free_times
   # GET /free_times.json
-  def index
+  def index # Sends the current users free times to the calendar
     @user = current_user
     @free_times = @user.free_times.all
   end
@@ -25,7 +25,7 @@ class FreeTimesController < ApplicationController
 
   # POST /free_times
   # POST /free_times.json
-  def create
+  def create  # creates a new free time in the database for the current user
     @user = current_user
     @free_time = @user.free_times.build(free_time_params)
 

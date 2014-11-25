@@ -20,13 +20,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'httparty'
 
-gem 'omniauth', '~> 1.2.2'
-
-gem 'omniauth-google-oauth2'
-
 gem 'json'
-
-gem 'google-api-client'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

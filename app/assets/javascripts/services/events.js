@@ -5,20 +5,8 @@ angular.module('docketApp')
   
   that.searchEvents = [];
   that.calendarEvents = [];
-
-  this.getCalendarEvents = function() {
-    return $http.get('/events.json').success(function(data) {
-      that.calendarEvents = data;
-      console.log('This called get calendar events: ' + that.calendarEvents.length); 
-    }); 
-  };
-
-  this.getCalendarFreeTimes = function() {
-    $http.get('/free_times.json').success(function(data) {
-      that.calendarEvents = data;
-    });
-  };
-
+  
+    //searches the event Api to get events
   this.search = function(location, date) {
     that.searchDate = date;   // save for later.
     console.log('eventService.search called');
@@ -38,9 +26,10 @@ angular.module('docketApp')
     return selected;
   };
 
+    // Saves the current users events to the database
   this.saveSelectedEvent = function() {
     var params  = {
-                    title: selected.title, 
+                      title: selected.title, 
                   city_name: selected.city_name, 
                   start_time: selected.start_time,
                   venue_name: selected.venue_name,
@@ -76,7 +65,7 @@ angular.module('docketApp')
     console.log('createDate: ' + strDate + ' ==> ' + result);
     return result;
   };
-
+    //adds events to the calendar
   this.addEvent = function(event) {
     var calendarEvent = {};
 
@@ -125,6 +114,7 @@ angular.module('docketApp')
     return result;
   };
 
+   //adds free time to the calendar view and adds it to the database
   this.addFreeTime = function(freeTimeDay, startTime, endTime) {
     
     var calendarEvent = {};
@@ -136,10 +126,10 @@ angular.module('docketApp')
     that.calendarEvents.push(calendarEvent);
 
     var params  = {
-                    title: calendarEvent.title,  
+                  title: calendarEvent.title,  
                   start_datetime: calendarEvent.start,
                   end_datetime: calendarEvent.end
-                }
+                  }
 
     $http.post('/free_times.json', params).success(function() {
       console.log('Selected Event Saved to the database');

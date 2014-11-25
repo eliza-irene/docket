@@ -1,3 +1,6 @@
+# This was for the Oauth 2 token calls
+# Not using Oauth 2 currently but will work on later
+
 require 'json'
 
 class Token < ActiveRecord::Base

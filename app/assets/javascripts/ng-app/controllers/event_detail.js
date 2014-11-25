@@ -11,7 +11,7 @@ angular.module('docketApp')
       $scope.calendarEvents.splice($scope.calendarEvents.indexOf(event), 1);
         $scope.selectedEvent = null;
     };
-
+      //adds the selected event to the calendar and saves to the database
     $scope.addEvent = function(event) {
       eventService.addEvent(event);
       $state.go('dashboard.calendar');

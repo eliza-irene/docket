@@ -31,11 +31,12 @@ angular.module('docketApp')
       }
     };
 
-    // var testEvent = data;
-
+    
+      // This takes the json call to the user events and adds it to the calendar
     $scope.calendarData = {
       events: events // eventService.calendarEvents
     };
+
 //[ { title: 'free time', start: '2014-11-24'} ]
      // $scope.calendarData.events.push(freeTimes[0]);
 
