@@ -1,10 +1,11 @@
 angular.module('docketApp')
-  .controller('CalendarCtrl', ['$scope','$state', 'eventService', function($scope, $state, eventService) {
+  .controller('CalendarCtrl', ['$scope','$state', 'eventService', 'events', 'freeTimes', function($scope, $state, eventService, events, freeTimes) {
 
     $scope.dayClick = function(date) {
       eventService.setFreeTimeDay(date);
       $state.go('dashboard.new_free_time');
     };
+
 
     $scope.eventDrop = function() {
       alert('eventDrop');
@@ -30,31 +31,25 @@ angular.module('docketApp')
       }
     };
 
-    var testEvent = {
-      title: 'Whatup?',
-      start: '2014-11-24'
-    };
+    // var testEvent = data;
 
     $scope.calendarData = {
-      events: [ testEvent ]
+      events: events // eventService.calendarEvents
     };
-
-    $scope.calendarData.events.push( {
-      title: 'XYZ',
-      start: '2014-11-25'
-    });
+//[ { title: 'free time', start: '2014-11-24'} ]
+     // $scope.calendarData.events.push(freeTimes[0]);
 
    
-    eventService.getCalendarEvents().success(function(data) {
-      // $scope.calendarData.events.length = 0;
-      // angular.copy($scope.calendarData.events, data);
-      $scope.calendarData.events.push({
-        title: 'Another',
-        start: '2014-11-22'
-      }); // data;
+    // eventService.getCalendarEvents().success(function(data) {
+    //   // $scope.calendarData.events.length = 0;
+    //   // angular.copy($scope.calendarData.events, data);
+    //   $scope.calendarData.events.push({
+    //     title: 'Another',
+    //     start: '2014-11-24'
+    //   }); // data;
 
-      $('#calendar').fullCalendar('rerenderEvents');
+    //   $('#calendar').fullCalendar('rerenderEvents');
 
-    });
+    // });
 
   }]);

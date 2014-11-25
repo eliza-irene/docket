@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   match '/search', to: 'events#search_events', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
-  #match '/signout', to: 'sessions#destroy', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'get'
 
   resources :sessions
   resources :tokens

@@ -1,0 +1,23 @@
+<h1>This is the Calendar Event View</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <h2>{{ selectedEvent.title }}</h2> </br> 
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    <img ng-show="selectedEvent.image" class="img img-responsive detail-img" ng-src='{{ selectedEvent.image["medium"]["url"] }}'/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8">
+    <h4>{{ selectedEvent.start_time }}</h4>
+    <h4>{{ selectedEvent.venue_address }}</h4>
+    <h4>{{ selectedEvent.city_name }}</h4>
+    <a ui-sref="selectedEvent.venue_url">{{ selectedEvent.venue_url }}</a>
+    <p class="lead">{{ selectedEvent.description }}</p>
+    <!-- <p ng-bind-html="description"></p> -->
+  </div>
+<div>
