@@ -17,18 +17,18 @@ docket is being developed for a project for the September 2014 Web Development I
 ##Technologies Used
 ---
 * Back end design and development using [Ruby 2.1.2](https://www.ruby-lang.org/en/), [Rails 4.1.6](http://weblog.rubyonrails.org/), and [Postgresql Database](http://www.postgresql.org/)
-* Authentication & Authorization using Google and Oauth2
+* Authentication & Authorization built from scratch
 * [Eventful API](http://api.eventful.com/) and [HTTParty](https://github.com/jnunemaker/httparty)
 * Testing using [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/jnicklas/capybara), and [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
-* Front-end design and development using [Twitter Bootstrap](http://getbootstrap.com/) 
+* Front-end design and development using [AngularJS](https://angularjs.org/), [jQuery](http://jquery.com/), [FullCalendar](http://fullcalendar.io/), and [Twitter Bootstrap](http://getbootstrap.com/) 
 
 ##User Story Examples
 ---
 
 As a user</br>
 When I arrive on the site</br>
-I want to sign in using my Google credentials</br>
-or be able to create a new Google account.</br>
+I want to sign</br>
+or be able to create a new account.</br>
 
 
 As a user </br>
@@ -40,27 +40,15 @@ And gives me the option to search all events with an optional new location param
 
 
 As a user</br>
-When I click on a day in my calendar,</br>
-I want to see a detail version of it </br>
-That allows me to add, edit or delete an associated free-time block.</br>
-
-
-As a user</br>
-When I click a free-time block</br>
-I want to see all events taking place during that time</br>
-And I want to be able to select one to save to my calendar.</br>
-
-
-As a user</br>
-When I click on the free-time button</br>
-I want to see a pop-up </br>
+When I click on a day to add free-time</br>
+I want to be redirected to a new view</br>
 That allows me to add the details of my free-time</br>
 And save it as a block on my calendar.</br>
 
 
 As a user </br>
 When I add an event</br>
-I want to see that the event appears in my calendar instead of the </br>free-time block.</br>
+I want to see that the event appears in my calendar.</br>
 
 
 As a user</br>
@@ -74,10 +62,10 @@ And allows me to get more info through the venue url.</br>
 ##Diagrams
 ---
 Below are our **wireframes** for docket: <br />
-![wireframe2](http://i.imgur.com/1TEzwFZ.jpg) <br />
-![wireframe2](http://i.imgur.com/mDYjrQf.jpg) <br />
+![wireframe2](//i.imgur.com/1TEzwFZ.jpg) <br />
+![wireframe2](//i.imgur.com/mDYjrQf.jpg) <br />
 
 ---
 
 Below is the **ERD** for docket: <br />
-![ERD](http://i.imgur.com/DhSf5yD.png?1)
+![ERD](//i.imgur.com/HVZ9uzV.png)
