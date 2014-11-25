@@ -7,9 +7,10 @@ angular.module('docketApp')
   that.calendarEvents = [];
 
   this.getCalendarEvents = function() {
-    $http.get('/events.json').success(function(data) {
+    return $http.get('/events.json').success(function(data) {
       that.calendarEvents = data;
-    });
+      console.log('This called get calendar events: ' + that.calendarEvents.length); 
+    }); 
   };
 
   this.getCalendarFreeTimes = function() {

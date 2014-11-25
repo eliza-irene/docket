@@ -32,7 +32,19 @@ angular
             .state('dashboard.calendar', {
                 url: '',
                 templateUrl: 'dashboard/calendar.html',
-                controller: 'CalendarCtrl'
+                controller: 'CalendarCtrl',
+                resolve: {
+                  events: ['$http', function($http) {
+                    return $http.get('/events.json').then(function(data) {
+                        return data.data;
+                    });
+                  }],
+                  freeTimes: ['$http', function($http) {
+                    return $http.get('/free_times.json').then(function(data) {
+                        return data.data;
+                    });
+                  }]
+                }
             })
             // this is /dashboard/two
             .state('dashboard.search_results', {
@@ -51,6 +63,12 @@ angular
                 url: '/new_free_time',
                 templateUrl: 'dashboard/new_free_time.html',
                 controller: 'NewFreeTimeCtrl'
+            }) 
+            // this is dashboard five
+            .state('dashboard.calendar_event_view', {
+                url: '/calendar_event_view',
+                templateUrl: 'dashboard/calendar_event_view.html',
+                controller: 'CalendarCtrl'
             });
 
     // default fall back route

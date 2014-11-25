@@ -20,6 +20,7 @@
 //= require angular-sanitize
 //= require ui-router-extras
 //= require moment
+//= require underscore
 //= require fullcalendar
 //= require angular-ui-calendar
 //= require_tree ../templates
