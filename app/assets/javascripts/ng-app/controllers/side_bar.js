@@ -1,7 +1,9 @@
 angular.module('docketApp')
-  .controller('SideBarCtrl', ["$scope", "$state", "eventService", function ($scope, $state, eventService) {
+  .controller('SideBarCtrl', ["$scope", "$state", "eventService", "userInfo", function ($scope, $state, eventService, userInfo) {
 
   // $scope.type = "<h1>type in here</h1>";
+
+  $scope.userInfo = userInfo;
 
   $scope.today = function() {
     $scope.dt = new Date();
@@ -32,6 +34,7 @@ angular.module('docketApp')
   $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
 
+  // Displays events to the search results state
   $scope.getEvents = function() {
     eventService.search($scope.location, $scope.dt).success(function(data) {
       $state.go('dashboard.search_results');

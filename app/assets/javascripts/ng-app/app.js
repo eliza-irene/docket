@@ -26,19 +26,26 @@ angular
             abstract: true,
             url: '/dashboard',
             templateUrl: 'dashboard/side_bar.html',
-            controller: 'SideBarCtrl'
+            controller: 'SideBarCtrl',
+            resolve: { //Gets the current users info on page load
+                userInfo: [ '$http', function($http) {
+                    return $http.get('/users.json').then(function(data) {
+                        return data.data;
+                    });
+                }]
+            }
         })
             // the default route when someone hits dashboard
             .state('dashboard.calendar', {
                 url: '',
                 templateUrl: 'dashboard/calendar.html',
                 controller: 'CalendarCtrl',
-                resolve: {
+                resolve: { // Gets the current users events on page load
                   events: ['$http', function($http) {
                     return $http.get('/events.json').then(function(data) {
                         return data.data;
                     });
-                  }],
+                  }], //Gets the current users free times on page load
                   freeTimes: ['$http', function($http) {
                     return $http.get('/free_times.json').then(function(data) {
                         return data.data;

@@ -4,8 +4,12 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
-  def index
-    @users = User.all
+  def index # Gives the json for the current users name and email
+    @users = [ current_user.name, current_user.email ]
+    respond_to do |format|
+      format.html 
+      format.json { render json: @users }
+    end
   end
 
   # GET /users/1
