@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
-<h1>Sign In</h1>
+<div class="jumbotron">
+  <h1>Sign In</h1>
+  <div class="user-form" id="signin">
+  <%= form_for(:session, url: '/#/dashboard') do |user| %>
 
-<%= form_for(:session, url: '/#/dashboard') do |user| %>
+    <div>
+      <%= user.label :name %></br>
+      <%= user.text_field :name, autofocus: true  %>
+    </div>
+    <br/>
 
-  <div>
-    <%= user.label :name %>
-    <%= user.text_field :name %>
-  </div>
-  <br/>
+    <div>
+      <%= user.label :password %></br>
+      <%= user.password_field :password%>
+    </div>
+    <br/>
 
-  <div>
-    <%= user.label :password %>
-    <%= user.password_field :password%>
-  </div>
-  <br/>
+    <div>
+      <%= user.submit 'Done' %>
+    </div>
 
-  <div>
-    <%= user.submit 'Done' %>
-  </div>
-
-<% end %> 
-</html>
+  <% end %>
+  </div> 
+</div>

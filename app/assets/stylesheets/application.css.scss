@@ -1,2 +1,34 @@
 @import "ng-app/main";
 
+.jumbotron {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #f3c88d;
+  border: 5px solid white;
+  h1 {
+    font-size: 40px;
+  }
+}
+
+.form-control {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form-btn {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.control-label {
+  font-size: 20px;
+}
+
+#sign-img {
+  position: fixed; 
+  top: 0;   
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}

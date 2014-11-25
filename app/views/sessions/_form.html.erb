@@ -1,19 +1,18 @@
-
 <%= form_for(:session, url: sessions_path) do |user| %>
 
   <div>
-     <%= user.label :data %>
-    <%= user.text_field :data %>
+    <%= user.label :name, class: "control-label"%></br>
+    <%= user.text_field :data, class: "form-control input-sm", autofocus: true %>
   </div>
-
+  </br>
   <div>
-    <%= user.label :password %>
-    <%= user.password_field :password%>
+    <%= user.label :password, class: "control-label"%></br>
+    <%= user.password_field :password, class: "form-control input-sm"%>
   </div>
   <br/>
 
   <div>
-    <%= user.submit 'Done' %>
+    <%= user.submit 'Sign In', class: "btn btn-large btn-default form-btn"%>
   </div>
 
 <% end %> 
