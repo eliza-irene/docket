@@ -7,7 +7,7 @@
 }
 
 .profile_img {
-  margin-left: 30px;
+  margin-left: 20px;
   border-radius: 50%;
   background: #D0D0D0;
   height: 100px;
@@ -24,11 +24,19 @@
 
 .navbar {
   background-color: #555866;
+  border: none;
+  border-radius: 0px;
   .navbar-brand {
-    color: white;
+    color: #ffc04d;
+    font-family: 'Roboto Slab';
+    font-size: 30px;
   }
   ul.nav.navbar-nav li a {
     color: white;
   }
+}
+
+.hint {
+  color: #ffc04d;
 }
 
