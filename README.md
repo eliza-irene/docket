@@ -62,10 +62,10 @@ And allows me to get more info through the venue url.</br>
 ##Diagrams
 ---
 Below are our **wireframes** for docket: <br />
-![wireframe2](//i.imgur.com/1TEzwFZ.jpg) <br />
-![wireframe2](//i.imgur.com/mDYjrQf.jpg) <br />
+![wireframe2](https://i.imgur.com/1TEzwFZ.jpg) <br />
+![wireframe2](https://i.imgur.com/mDYjrQf.jpg) <br />
 
 ---
 
 Below is the **ERD** for docket: <br />
-![ERD](//i.imgur.com/HVZ9uzV.png)
+![ERD](https://i.imgur.com/HVZ9uzV.png)
