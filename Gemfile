@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
 gem 'bower-rails'
 gem 'angular-rails-templates'
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
